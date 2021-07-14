@@ -26,7 +26,7 @@ public class DiscraftConfig {
 		this.log = plugin.getLogger();
 		this.config = plugin.getConfig();
 	}
-	
+
 	public boolean hasBotToken() {
 		return botToken != null;
 	}
@@ -40,7 +40,7 @@ public class DiscraftConfig {
 			return false;
 		}
 		Object configDefault = DEFAULTS.get(key);
-		Object current = config.getObject(key, configDefault.getClass());	
+		Object current = config.getObject(key, configDefault.getClass());
 		return Objects.equals(configDefault, current);
 	}
 
@@ -54,7 +54,8 @@ public class DiscraftConfig {
 
 		log.fine("Fetching bot token");
 		String botToken = config.getString(BOT_TOKEN);
-		if (botToken != null && !this.isDefault(BOT_TOKEN)) {
+		if (botToken != null && !botToken.isEmpty()
+				&& !this.isDefault(BOT_TOKEN)) {
 			this.botToken = botToken;
 		}
 	}
