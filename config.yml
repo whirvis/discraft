@@ -1,1 +1,2 @@
-bot-token: BOT-TOKEN-HERE
+messages:
+  format: "[%source%] <%sender%> %message%"
